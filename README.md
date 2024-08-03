@@ -30,7 +30,7 @@ Follow official guidance to install [Pytorch](https://pytorch.org).
 To train the model, run this command:
 
 ```train
-python train.py --root_path <dataset_path> --exp <path_to_save_model> --bilinear --linear_layer --fold MAAGfold --max_epoches 200 --weight_cam_subloss 0.25 0.5 0.75 1 --weight_cam 0.1
+python train.py --root_path /home/grozta/Desktop/Laboratory/FrameWork/WSL4MIS/data/ACDC --exp scribble_VAL --bilinear --linear_layer --fold MAAGfold --max_epoches 200 --weight_cam_subloss 0.25 0.5 0.75 1 --weight_cam 0.1
 ```
 
 ## Evaluation
