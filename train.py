@@ -32,7 +32,7 @@ if __name__ == '__main__':
     parser.add_argument("--session_name", default="TransCAM", type=str)
     parser.add_argument("--crop_size", default=512, type=int)
     parser.add_argument("--weights", default='', type=str)
-    parser.add_argument("--tblog_dir", default='./tblog', type=str)
+    parser.add_argument("--tblog_dir", default='tblog', type=str)
     parser.add_argument('--deterministic', type=int, default=1,
                         help='whether use deterministic training')
     parser.add_argument('--root_path', type=str,
@@ -74,7 +74,7 @@ if __name__ == '__main__':
     model = getattr(importlib.import_module(args.network), 'ScribFormer')(linear_layer=args.linear_layer, bilinear=args.bilinear)
     print('model is from', model.__class__)
 
-    tblogger = SummaryWriter(args.tblog_dir)
+    tblogger = SummaryWriter(os.path.join(snapshot_path, args.tblog_dir))
 
     db_train = BaseDataSets(base_dir=args.root_path, split="train", transform=transforms.Compose([
         RandomGenerator(args.patch_size)
