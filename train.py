@@ -61,7 +61,7 @@ if __name__ == '__main__':
         cudnn.benchmark = False
         cudnn.deterministic = True
 
-    snapshot_path = "../model/{}_{}/{}".format(
+    snapshot_path = "./model/{}_{}/{}".format(
         args.exp, args.fold, args.sup_type)
     if not os.path.exists(snapshot_path):
         os.makedirs(snapshot_path)
